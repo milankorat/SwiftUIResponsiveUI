@@ -17,7 +17,7 @@ You can add `ResponsiveSize` to your project using Swift Package Manager.
 1. In Xcode, open your project.
 2. Go to `File` > `Add Packages...`.
 3. Paste the following URL into the "Search or Enter Package URL" field:  
-   `Link Github`
+   `https://github.com/milankorat/SwiftUIResponsiveUI.git`
 4. Select the version you want and click **Add Package**.
 
 ## Usage
