@@ -35,12 +35,15 @@ public extension View {
     /**
      Responsive Frame
      */
-    func responsiveFrame(width baseWidth: CGFloat, height baseHeight: CGFloat) -> some View {
-        self.frame(
-            width: ResponsiveHelper.shared.scaleDimension(baseWidth),
-            height: ResponsiveHelper.shared.scaleDimension(baseHeight, useHeightScale: true)
-        )
-    }
+    func responsiveFrame(
+            width baseWidth: CGFloat? = nil,
+            height baseHeight: CGFloat? = nil
+        ) -> some View {
+            self.frame(
+                width: baseWidth != nil ? ResponsiveHelper.shared.scaleDimension(baseWidth!) : nil,
+                height: baseHeight != nil ? ResponsiveHelper.shared.scaleDimension(baseHeight!, useHeightScale: true) : nil
+            )
+        }
     
     /**
      Responsive Square
@@ -56,9 +59,9 @@ public extension View {
     /**
      Responsive Padding
      */
-    func responsivePadding(_ basePadding: CGFloat) -> some View {
-        self.padding(ResponsiveHelper.shared.scaleDimension(basePadding))
-    }
+    func responsivePadding( _ basePadding: CGFloat,edges: Edge.Set = .all) -> some View {
+            self.padding(edges, ResponsiveHelper.shared.scaleDimension(basePadding))
+        }
     
     /**
      Responsive Corner Radius
